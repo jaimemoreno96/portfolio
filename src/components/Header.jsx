@@ -1,17 +1,20 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { AppBar, Button, createMuiTheme, Drawer, Hidden, IconButton, List, ListItem, ListItemText, makeStyles, responsiveFontSizes, Toolbar, Typography } from '@material-ui/core';
+import React, { Fragment, useState } from 'react';
+import { AppBar, Button, createMuiTheme, Hidden, IconButton, makeStyles, responsiveFontSizes, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuDrawer from './MenuDrawer';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
+    barCenter: {
+        justify: 'center'
+    },
     title: {
         flexGrow: 1,
     },
 }))
 
-const Header = () => {
+const Header = ({ trigger }) => {
 
     const classes = useStyles();
     let theme = createMuiTheme();
@@ -33,7 +36,7 @@ const Header = () => {
     return (
         <Fragment>
             <AppBar
-                color="inherit"
+                color={trigger ? "default" : "transparent"}
             // className={classes.toolbar}
             >
                 <Toolbar
@@ -41,8 +44,13 @@ const Header = () => {
                     variant="dense"
                 >
                     {/* {resize ? console.log("sm") : console.log("lg")} */}
-                    <Typography variant="h6" noWrap className={classes.title}>
-                        Jaime Moreno Puentes
+                    <Typography
+                        color={trigger ? "inherit" : "textSecondary"}
+                        variant="h6"
+                        noWrap
+                        className={classes.title}
+                    >
+                        Portfolio
                     </Typography>
                     <Hidden smDown implementation="js">
                         {sections.map(section => (
@@ -55,7 +63,9 @@ const Header = () => {
                                 offset={-70}
                                 duration={500}
                             >
-                                <Button color="inherit">{section.title}</Button>
+                                <Button
+                                    color={trigger ? "inherit" : "inherit"}
+                                >{section.title}</Button>
                             </Link>
                         ))}
                     </Hidden>
