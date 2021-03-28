@@ -46,7 +46,7 @@ const MenuDrawer = ({ open, setOpen, sections }) => {
                                 to={section.url}
                                 spy={true}
                                 smooth={true}
-                                offset={-70}
+                                offset={-50}
                                 duration={500}
                                 onClick={() => handleDrawerToggle()}
                             >

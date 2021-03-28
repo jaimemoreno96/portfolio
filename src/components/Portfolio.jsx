@@ -1,5 +1,5 @@
-import { Fab, makeStyles, useScrollTrigger } from '@material-ui/core';
 import React, { Fragment, useEffect, useRef, useState } from 'react'
+import { Fab } from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import About from './About';
 import BackToTop from './BackToTop';
@@ -10,16 +10,31 @@ import Main from './Main';
 import Projects from './Projects';
 import Skills from './Skills';
 
-const useStyles = makeStyles((theme) => ({
-    main: {
-        paddingBottom: theme.spacing(2),
-
-    },
-}))
-
 const Portfolio = () => {
+    const dataMain = {
+        title: 'Jaime Moreno Puentes',
+        subtitle: 'Frontend Developer'
+    }
+
+    const dataAbout = {
+        title: 'About me',
+        description: "i´m a frontend developer with two years of experience in web development, and also i have knowledge in backend, i´m very interested in programming and new technologies.",
+        socials: [
+            {
+                name: 'github',
+                link: 'https://github.com/jaimemoreno96'
+            },
+            {
+                name: 'linkedin',
+                link: 'https://www.linkedin.com/in/jaime-moreno-581b031b5/'
+            }
+        ]
+
+
+
+    }
+
     const nodeRef = useRef(null);
-    const classes = useStyles();
     const [trigger, setTrigger] = useState(false);
 
     useEffect(() => {
@@ -44,9 +59,9 @@ const Portfolio = () => {
             <main>
                 <div id="header">
                     <Header trigger={trigger} />
-                    <Main />
+                    <Main dataMain={dataMain} />
                 </div>
-                <About />
+                <About dataAbout={dataAbout} />
                 <Skills />
                 <Projects />
                 <Contact />
