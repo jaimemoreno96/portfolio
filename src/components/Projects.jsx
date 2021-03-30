@@ -3,11 +3,19 @@ import { makeStyles, Typography } from '@material-ui/core';
 import ParticlesBg from 'particles-bg';
 
 const useStyles = makeStyles(theme => ({
+    titleProject: {
+        fontWeight: 'bold',
+        verticalAlign: 'middle'
+    },
     projectSection: {
         padding: theme.spacing(2),
         backgroundColor: '#000524',
         color: theme.palette.common.white,
-    }
+    },
+    aboutContent: {
+        margin: theme.spacing(5),
+        // marginTop: 'auto'
+    },
 }));
 
 const Projects = () => {

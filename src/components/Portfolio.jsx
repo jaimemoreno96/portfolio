@@ -18,7 +18,7 @@ const Portfolio = () => {
 
     const dataAbout = {
         title: 'About me',
-        description: "i´m a frontend developer with two years of experience in web development, and also i have knowledge in backend, i´m very interested in programming and new technologies.",
+        description: "Hello i´m Jaime a frontend developer with two years of experience in web development, and also i have knowledge on backend and Android development (Native), i´m very interested in programming and new technologies.",
         socials: [
             {
                 name: 'github',
@@ -29,10 +29,14 @@ const Portfolio = () => {
                 link: 'https://www.linkedin.com/in/jaime-moreno-581b031b5/'
             }
         ]
-
-
-
     }
+
+    const skillsData = {
+        languages: ['javascript', 'php', 'kotlin', 'java'],
+        frameworks: ['reactjs', 'angular', 'nodejs'],
+        tools: ['git', 'github', 'firebase']
+    }
+
 
     const nodeRef = useRef(null);
     const [trigger, setTrigger] = useState(false);
@@ -62,7 +66,7 @@ const Portfolio = () => {
                     <Main dataMain={dataMain} />
                 </div>
                 <About dataAbout={dataAbout} />
-                <Skills />
+                <Skills skillsData={skillsData}/>
                 <Projects />
                 <Contact />
                 <Footer />

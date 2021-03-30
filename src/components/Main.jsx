@@ -7,24 +7,38 @@ import { animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
     mainBackground: {
-        // marginTop: theme.spacing(6),
-        // position: 'relative',
-        // backgroundColor: theme.palette.common.white,
+        display: 'block',
+        position: 'relative',
+        height: '100vh',
+        weight: '100vw',
+        // left: '0',
+        verticalAlign: 'middle',
+        marginTop: '0',
+        padding: theme.spacing(5),
         color: theme.palette.common.white,
-        marginBottom: theme.spacing(4),
+        // boxSizing: 'boder-box',
         // backgroundImage: `url(${img})`,
         // backgroundSize: '100%',
         // backgroundRepeat: 'no-repeat',
         // backgroundPosition: 'center',
+        // '&::before': {
+        //     content: '',
+        //     display: 'inline-block',
+        //     verticalAlign: 'middle',
+        //     heigth: '100%'
+        // }
     },
     mainContent: {
-        marginTop: theme.spacing(3),
-        position: 'relative',
-        padding: theme.spacing(3),
-        margin: 'auto',
+        verticalAlign: 'middle',
+        // display: 'inline-block',
+        // marginTop: theme.spacing(3),
+        // marginTop: theme.spacing(9),
+        width: '100%',
+        // position: 'relative',
+        // padding: theme.spacing(1),
         [theme.breakpoints.up('md')]: {
-            padding: theme.spacing(9),
-            paddingRight: 0
+            // marginTop: theme.spacing(9),
+            padding: theme.spacing(6),
         },
 
     },
@@ -33,8 +47,21 @@ const useStyles = makeStyles((theme) => ({
     },
     scrollBtn: {
         // marginTop: theme.spacing(1),
+        marginTop: theme.spacing(9),
         display: 'block',
         margin: 'auto'
+    },
+    circles: {
+        position: 'fixed',
+        left: '0',
+        top: '0',
+        width: '100%',
+        height: '100%',
+        // backgroundImage: 'url("")',
+        // backgroundSize: 'cover',
+        // backgroundPosition: '50% 50%',
+        // backgroundRepeat: 'no-repeat',
+        zIndex: '0'
     }
 }));
 
@@ -56,35 +83,38 @@ const Main = ({ dataMain }) => {
 
     return (
         <section id="main" className={classes.mainBackground}>
-
-            <Grid container justify="center">
-                <ParticlesBg type="circle" bg={true} />
-                <Grid item xl={12} md={12}>
-                    <div className={classes.mainContent}>
+            <ParticlesBg type="circle" bg={true} num="30" />
+            <Grid container
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: '100vh' }}
+                >
+                <div className={classes.mainContent}>
+                    <Grid item xl={12} md={12}>
                         <Typography className={classes.boldWeight} align="center" component="h5" variant="h3" color="inherit" gutterBottom>
                             {title}
                         </Typography>
                         <Typography className={classes.boldWeight} align="center" variant="h5" color="inherit" paragraph>
                             {subtitle}
                         </Typography>
-                    </div>
-                </Grid>
-                <Grid item xl={12} md={12}>
-                    <IconButton
-                        color="inherit"
-                        aria-label="scroll"
-                        onClick={scrollToAbout}
-                        className={classes.scrollBtn}
-                    >
-                        <KeyboardArrowDown fontSize="large" />
-                    </IconButton>
-                    <Typography className={classes.boldWeight} align="center" variant="body1" color="inherit" paragraph>
-                        Scroll
+                    </Grid>
+                    <Grid item xl={12} md={12}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="scroll"
+                            onClick={scrollToAbout}
+                            className={classes.scrollBtn}
+                        >
+                            <KeyboardArrowDown fontSize="large" />
+                        </IconButton>
+                        <Typography className={classes.boldWeight} align="center" variant="body1" color="inherit" paragraph>
+                            Scroll
                     </Typography>
-                </Grid>
+                    </Grid>
+                </div>
             </Grid>
         </section>
-
     );
 }
 

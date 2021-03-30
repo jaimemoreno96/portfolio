@@ -14,14 +14,15 @@ const useStyles = makeStyles(theme => ({
     },
     titleAbout: {
         fontWeight: 'bold',
-        marginTop: 'auto'
+        verticalAlign: 'middle'
     },
     aboutContent: {
         margin: theme.spacing(5),
         // marginTop: 'auto'
     },
     aboutLinks: {
-        color: theme.palette.common.white,
+        // color: theme.palette.common.white,
+        marginLeft: theme.spacing(2)
     }
 }));
 
@@ -48,24 +49,21 @@ const About = ({ dataAbout }) => {
                     <Typography className={classes.aboutContent} variant="body1" component="p">
                         {description}
                     </Typography>
-                    <Grid container>
-                        {socials.map(social => (
-                            <Grid item lg={1} key={social.name}>
-                                <Link
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    onClick={() => console.log(social.name)}
-                                    href={social.link}
-                                >
-                                    <FontAwesomeIcon icon={['fab', social.name]} size="3x" color="white" />
-                                </Link>
-                            </Grid>
-                        ))}
-                    </Grid>
+                    {socials.map(social => (
+                        <Link
+                            className={classes.aboutLinks}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={() => console.log(social.name)}
+                            href={social.link}
+                            key={social.name}
+                        >
+                            <FontAwesomeIcon icon={['fab', social.name]} size="3x" color="white" />
+                        </Link>
+                    ))}
                 </Grid>
             </Grid>
         </section>
-
     );
 }
 
