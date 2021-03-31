@@ -16,19 +16,27 @@ const Portfolio = () => {
         subtitle: 'Frontend Developer'
     }
 
-    const dataAbout = {
-        title: 'About me',
-        description: "Hello i´m Jaime a frontend developer with two years of experience in web development, and also i have knowledge on backend and Android development (Native), i´m very interested in programming and new technologies.",
-        socials: [
+    const contactData = {
+        contacts: [
             {
                 name: 'github',
-                link: 'https://github.com/jaimemoreno96'
+                realName: 'Github',
+                link: 'https://github.com/jaimemoreno96',
+                color: 'black'
             },
             {
                 name: 'linkedin',
-                link: 'https://www.linkedin.com/in/jaime-moreno-581b031b5/'
+                realName: 'Linkedin',
+                link: 'https://www.linkedin.com/in/jaime-moreno-581b031b5/',
+                color: 'royalblue'
             }
-        ]
+        ],
+    }
+
+    const dataAbout = {
+        title: 'About me',
+        description: "Hello i´m Jaime a frontend developer with two years of experience in web development, and also i have knowledge on backend and Android development (Native), i´m very interested in programming and new technologies.",
+        socials: [...contactData.contacts]
     };
 
     const skillsData = {
@@ -41,6 +49,16 @@ const Portfolio = () => {
         projects: [
             {
                 name: 'Porfolio',
+                technologies: [
+                    {
+                        name: 'react',
+                        color: 'dodgerblue'
+                    },
+                    // {
+                    //     name: 'node',
+                    //     color: 'black'
+                    // }
+                ],
                 link: 'https://github.com/jaimemoreno96/portfolio',
                 img: 'portfolio'
 
@@ -78,7 +96,7 @@ const Portfolio = () => {
                 <About dataAbout={dataAbout} />
                 <Skills skillsData={skillsData} />
                 <Projects projectsData={projectsData} />
-                <Contact />
+                <Contact contactData={contactData} />
                 <Footer />
                 <BackToTop>
                     <Fab ref={nodeRef} color="default" size="small" aria-label="scroll back to top">

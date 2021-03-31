@@ -53,7 +53,7 @@ const Projects = ({ projectsData }) => {
             </Typography>
             <Grid container className={classes.projectContent}>
                 {projects.map(project => (
-                    <Grid item lg={4} md={6} sm={12} key={project.name}>
+                    <Grid item lg={4} md={6} sm={12} xs={12} key={project.name}>
                         <Card className={classes.root}>
                             <CardHeader
                                 title={project.name}
@@ -73,6 +73,11 @@ const Projects = ({ projectsData }) => {
                                 >
                                     <FontAwesomeIcon icon={['fab', 'github-square']} size="3x" color="black" />
                                 </Link>
+                                <div style={{ marginLeft: 'auto' }}>
+                                    {project.technologies.map(tech => (
+                                        <FontAwesomeIcon key={tech.name} style={{ marginLeft: '1rem' }} icon={['fab', tech.name]} size="2x" color={tech.color} />
+                                    ))}
+                                </div>
                             </CardActions>
                         </Card>
                     </Grid>
