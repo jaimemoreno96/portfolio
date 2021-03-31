@@ -1,35 +1,83 @@
 import React from 'react'
-import { makeStyles, Typography } from '@material-ui/core';
+import { Card, CardActions, CardHeader, CardMedia, Grid, Link, makeStyles, Typography } from '@material-ui/core';
 import ParticlesBg from 'particles-bg';
+import { projectsImages } from './SkillImages';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab, faGithubSquare, faReact } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab, faGithubSquare, faReact);
 
 const useStyles = makeStyles(theme => ({
     titleProject: {
         fontWeight: 'bold',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1)
     },
     projectSection: {
         padding: theme.spacing(2),
         backgroundColor: '#000524',
         color: theme.palette.common.white,
     },
-    aboutContent: {
-        margin: theme.spacing(5),
+    projectContent: {
+        padding: theme.spacing(2),
         // marginTop: 'auto'
     },
+    root: {
+        maxWidth: 345,
+    },
+    media: {
+        height: 0,
+        paddingTop: '56.25%',
+    },
+    projectsLinks: {
+        // color: theme.palette.common.white,
+        marginLeft: theme.spacing(2)
+    }
 }));
 
-const Projects = () => {
+const Projects = ({ projectsData }) => {
+    const { projects } = projectsData;
     const classes = useStyles();
 
     return (
         <section id="projects" className={classes.projectSection}>
-            <Typography variant="h5" component="h2">Projects</Typography>
-            <Typography variant="body1" component="p">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque praesentium illum eum exercitationem non fugiat reiciendis nesciunt, eaque nostrum perspiciatis beatae voluptatem dolorem provident. Ullam odit quod ut quaerat voluptatum.
+            <Typography
+                variant="h4"
+                component="h1"
+                className={classes.titleProject}
+                align="center"
+            >
+                Projects
             </Typography>
-            <Typography variant="body1" component="p">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error id nulla officia voluptate dicta aperiam exercitationem accusantium, accusamus doloribus omnis quidem corporis ad esse modi earum deleniti, dolor consectetur consequuntur!
-            </Typography>
+            <Grid container className={classes.projectContent}>
+                {projects.map(project => (
+                    <Grid item lg={4} md={6} sm={12} key={project.name}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                title={project.name}
+                            />
+                            <CardMedia
+                                className={classes.media}
+                                image={projectsImages[project.img]}
+                                title={project.name}
+                            />
+                            <CardActions>
+                                <Link
+                                    className={classes.projectsLinks}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href={project.link}
+                                    key={project.name}
+                                >
+                                    <FontAwesomeIcon icon={['fab', 'github-square']} size="3x" color="black" />
+                                </Link>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
         </section>
     );
 }

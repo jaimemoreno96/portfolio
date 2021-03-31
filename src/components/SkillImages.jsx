@@ -8,9 +8,10 @@ import nodejs from '../assets/img/nodejs.png'
 import git from '../assets/img/git.png'
 import github from '../assets/img/github.png'
 import firebase from '../assets/img/firebase.png'
+import portfolio from '../assets/img/portfolio.png'
 
 const images = {
-    javascript,
+    javascript: javascript,
     php: php,
     java: java,
     kotlin: kotlin,
@@ -22,4 +23,8 @@ const images = {
     firebase: firebase
 };
 
-export default images;
+const projectsImages = {
+    portfolio: portfolio
+}
+
+export { images, projectsImages};

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Grid, GridList, GridListTile, GridListTileBar, makeStyles, Typography } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel';
-import images from './SkillImages';
+import { images } from './SkillImages';
 
 const useStyles = makeStyles(theme => ({
     skillSection: {

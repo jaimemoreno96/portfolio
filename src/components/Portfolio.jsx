@@ -29,7 +29,7 @@ const Portfolio = () => {
                 link: 'https://www.linkedin.com/in/jaime-moreno-581b031b5/'
             }
         ]
-    }
+    };
 
     const skillsData = {
         languages: ['javascript', 'php', 'kotlin', 'java'],
@@ -37,6 +37,16 @@ const Portfolio = () => {
         tools: ['git', 'github', 'firebase']
     }
 
+    const projectsData = {
+        projects: [
+            {
+                name: 'Porfolio',
+                link: 'https://github.com/jaimemoreno96/portfolio',
+                img: 'portfolio'
+
+            },
+        ]
+    }
 
     const nodeRef = useRef(null);
     const [trigger, setTrigger] = useState(false);
@@ -66,8 +76,8 @@ const Portfolio = () => {
                     <Main dataMain={dataMain} />
                 </div>
                 <About dataAbout={dataAbout} />
-                <Skills skillsData={skillsData}/>
-                <Projects />
+                <Skills skillsData={skillsData} />
+                <Projects projectsData={projectsData} />
                 <Contact />
                 <Footer />
                 <BackToTop>
