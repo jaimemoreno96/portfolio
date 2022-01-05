@@ -9,6 +9,7 @@ import git from '../assets/img/git.png'
 import github from '../assets/img/github.png'
 import firebase from '../assets/img/firebase.png'
 import portfolio from '../assets/img/portfolio.png'
+import todoapp from '../assets/img/todo-app.png'
 
 const images = {
     javascript: javascript,
@@ -24,7 +25,8 @@ const images = {
 };
 
 const projectsImages = {
-    portfolio: portfolio
+    portfolio: portfolio,
+    todoapp: todoapp
 }
 
 export { images, projectsImages};
