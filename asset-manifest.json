@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.c1e551ef.chunk.css",
-    "main.js": "/portfolio/static/js/main.cbb023da.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.cbb023da.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.a2f1c678.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.a2f1c678.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.fd2d56f6.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.fd2d56f6.js.map",
     "static/css/2.7d5ef49c.chunk.css": "/portfolio/static/css/2.7d5ef49c.chunk.css",
@@ -25,13 +25,14 @@
     "static/media/nodejs.c8790f18.png": "/portfolio/static/media/nodejs.c8790f18.png",
     "static/media/php.67cb7950.png": "/portfolio/static/media/php.67cb7950.png",
     "static/media/portfolio.66b54c60.png": "/portfolio/static/media/portfolio.66b54c60.png",
-    "static/media/index.css": "/portfolio/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+    "static/media/index.css": "/portfolio/static/media/roboto-vietnamese-400-normal.52cebac0.woff2",
+    "static/media/todo-app.9bee91e9.png": "/portfolio/static/media/todo-app.9bee91e9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fd2d56f6.js",
     "static/css/2.7d5ef49c.chunk.css",
     "static/js/2.2da1c953.chunk.js",
     "static/css/main.c1e551ef.chunk.css",
-    "static/js/main.cbb023da.chunk.js"
+    "static/js/main.a2f1c678.chunk.js"
   ]
 }
